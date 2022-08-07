@@ -1,0 +1,2 @@
+action=" <?php echo htmlentities($_SERVER['PHP_SELF']); ?> "
+ <p> <?php  echo $_SESSION['msg']; ?> </p>

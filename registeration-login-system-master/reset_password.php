@@ -16,16 +16,15 @@
         $token = $_GET['token'];
         $new_password = stripslashes($_REQUEST['new_password']);    // removes backslashes
         $confirm_password=stripslashes($_REQUEST['confirm_password']);
-        $email = mysqli_real_escape_string($con, $email);
         // Check user exist in the database
         if ($new_password==$confirm_password){
             $query    = "Update `users` SET `users`.`password`='" . md5($new_password) . "' WHERE `users`.`token`='$token' AND `users`.`status`='active'";
             $result = mysqli_query($con, $query) or die(mysql_error());
+            header("Location: login.php");
         } else {
             echo "<div class='form'>
-                    Password did not match
-                  <h3>Email not registered.</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
+                    Password did not match<br/>
+                  <p class='link'>Click here to <a href='enter_email.php'>reset</a> again.</p>
                   </div>";
         }
     }
@@ -37,8 +36,5 @@
         <input type="password" class="login-input" name="confirm_password" placeholder="Confirm Password"/>
         <input type="submit" value="Confirm" name="submit" class="login-button"/>
   </form>
-<?php
-    }
-?>
 </body>
 </html>

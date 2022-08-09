@@ -20,7 +20,11 @@
         $password = mysqli_real_escape_string($con, $password);
         $create_datetime = date("Y-m-d H:i:s");
 <<<<<<< HEAD
+<<<<<<< HEAD
         $token = bin2hex(random_bytes(10));
+=======
+        $token = bin2hex(random_bytes(16));
+>>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
 =======
         $token = bin2hex(random_bytes(16));
 >>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee

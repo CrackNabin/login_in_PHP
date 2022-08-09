@@ -12,6 +12,7 @@
     require('db.php');
     session_start();
 <<<<<<< HEAD
+<<<<<<< HEAD
     // When form submitted, check email and send reset link.
     if (isset($_POST['email'])) {
         $email = stripslashes($_REQUEST['email']);    // removes backslashes
@@ -37,6 +38,8 @@
             echo "<div class='form'>
                   <h3>Incorrect Username/password.</h3><br/>
 =======
+=======
+>>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
     // When form submitted, check and create user session.
     if (isset($_REQUEST['email'])) {
         $email = stripslashes($_REQUEST['email']);    // removes backslashes
@@ -63,6 +66,9 @@
             echo "<div class='form'>
                     $email
                   <h3>Email not registered.</h3><br/>
+<<<<<<< HEAD
+>>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
+=======
 >>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
                   <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
                   </div>";
@@ -70,18 +76,24 @@
     } else {
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <form class="form" method="post" name="login">
         <h1 class="login-title">Reset Password</h1>
         <div><p> <?php  echo $_SESSION['msg']; ?> </p></div>
         <input type="text" class="login-input" name="email" placeholder="Enter your Email" autofocus="true"/>
         <input type="submit" value="Login" name="submit" class="login-button"/>
 =======
+=======
+>>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
    
     <form class="form" method="post" name="login">
         <?php echo "<h1>$rows </h1>"; ?>
         <h1 class="login-title">Reset Password</h1>
         <input type="text" class="login-input" name="email" placeholder="Enter your email" autofocus="true"/>
         <input type="submit" value="Enter" name="submit" class="login-button"/>
+<<<<<<< HEAD
+>>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
+=======
 >>>>>>> 0a6e92d51bc4689f9323cac5514aaf61e0c15dee
   </form>
 <?php

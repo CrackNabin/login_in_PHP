@@ -1,0 +1,3 @@
+sendmail.ini
+httpd.conf
+php.ini

@@ -19,7 +19,7 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con, $password);
         $create_datetime = date("Y-m-d H:i:s");
-        $token = bin2hex(random_bytes(32));
+        $token = bin2hex(random_bytes(10));
         $query    = "INSERT into `users` (username, password, email, create_datetime, token, status)
                      VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime', '$token','inactive')";
         $result   = mysqli_query($con, $query);
@@ -32,7 +32,7 @@
 
                 $subject = "Email Verification:";
                 $body = "Hi, $username.\n\nThank you for registering at our website.\n\nPlease click on the link below to activate your account:\n\n http://localhost/registeration-login-system-master/activate.php?token=$token\n\n";
-                $headers = "From: n02431918@student.ku.edu.np";
+                $headers = "From: ak02432718@student.ku.edu.np";
 
                 if (mail($email, $subject, $body, $headers)) {
                     $_SESSION['msg'] ="Registration successful. Please check your email to activate your account.";
